@@ -40,7 +40,7 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.gpbDatos = new System.Windows.Forms.GroupBox();
             this.nudInventario = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,19 +57,19 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nudCostoMayoreo = new System.Windows.Forms.NumericUpDown();
+            this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gpbDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -210,26 +210,26 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Location = new System.Drawing.Point(276, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(558, 283);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(545, 256);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(7, 19);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(545, 256);
+            this.dgvProductos.TabIndex = 0;
             // 
             // gpbDatos
             // 
             this.gpbDatos.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.gpbDatos.Controls.Add(this.numericUpDown2);
-            this.gpbDatos.Controls.Add(this.numericUpDown1);
+            this.gpbDatos.Controls.Add(this.nudPrecioVenta);
+            this.gpbDatos.Controls.Add(this.nudCostoMayoreo);
             this.gpbDatos.Controls.Add(this.nudInventario);
             this.gpbDatos.Controls.Add(this.label7);
             this.gpbDatos.Controls.Add(this.label6);
@@ -354,6 +354,7 @@
             this.btnLimpiar.TabIndex = 26;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnOk
             // 
@@ -399,31 +400,31 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             // 
-            // numericUpDown1
+            // nudCostoMayoreo
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(90, 91);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudCostoMayoreo.DecimalPlaces = 2;
+            this.nudCostoMayoreo.Location = new System.Drawing.Point(90, 91);
+            this.nudCostoMayoreo.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(145, 20);
-            this.numericUpDown1.TabIndex = 40;
+            this.nudCostoMayoreo.Name = "nudCostoMayoreo";
+            this.nudCostoMayoreo.Size = new System.Drawing.Size(145, 20);
+            this.nudCostoMayoreo.TabIndex = 40;
             // 
-            // numericUpDown2
+            // nudPrecioVenta
             // 
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.Location = new System.Drawing.Point(82, 119);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.nudPrecioVenta.DecimalPlaces = 2;
+            this.nudPrecioVenta.Location = new System.Drawing.Point(82, 119);
+            this.nudPrecioVenta.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(153, 20);
-            this.numericUpDown2.TabIndex = 41;
+            this.nudPrecioVenta.Name = "nudPrecioVenta";
+            this.nudPrecioVenta.Size = new System.Drawing.Size(153, 20);
+            this.nudPrecioVenta.TabIndex = 41;
             // 
             // frmProductos
             // 
@@ -457,12 +458,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.gpbDatos.ResumeLayout(false);
             this.gpbDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -480,7 +481,7 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.GroupBox gpbDatos;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
@@ -497,7 +498,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboNombre;
         private System.Windows.Forms.ComboBox cboIdProducto;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudPrecioVenta;
+        private System.Windows.Forms.NumericUpDown nudCostoMayoreo;
     }
 }
