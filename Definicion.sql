@@ -44,3 +44,10 @@ DESCRIBE empleado;
 DESCRIBE productos;
 DESCRIBE venta;
 DESCRIBE productosVenta;
+
+LOAD DATA INFILE "F:/Documents/UPP/3er Cuatrimestre/Fundamentos de Bases de Datos/Proyecto/ProyectoFinal3erParcial/productos.csv"
+INTO TABLE productos
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;

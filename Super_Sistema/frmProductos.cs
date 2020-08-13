@@ -62,12 +62,42 @@ namespace Super_Sistema
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            cerrarPadre();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void frmProductos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cerrarPadre();
+        }
+
+        private void cerrarPadre()
+        {
+            Owner.Dispose();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            mostrarMensajeConstruccion();
+        }
+
+        private void mostrarMensajeConstruccion()
+        {
+            MessageBox.Show("Sección aún no disponible.", "En construcción", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            mostrarMensajeConstruccion();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            mostrarMensajeConstruccion();
         }
     }
 }
