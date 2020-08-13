@@ -147,7 +147,7 @@ namespace Super_Sistema
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            gpbDatos.BackColor = Color.Red;
+            gpbDatos.BackColor = System.Drawing.ColorTranslator.FromHtml("#CCA19B");
             lblEstado.Text = "ELIMINANDO UN PRODUCTO";
             accionBotonOK = operacionCRUD.Eliminar;
             gpbDatos.Enabled = true;
@@ -157,7 +157,7 @@ namespace Super_Sistema
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            gpbDatos.BackColor = Color.Green;
+            gpbDatos.BackColor = System.Drawing.ColorTranslator.FromHtml("#9ACC97");
             gpbDatos.Enabled = true;
             gpbBotones.Enabled = true;
             lblEstado.Text = "AÑADIENDO UN PRODUCTO";
@@ -167,7 +167,7 @@ namespace Super_Sistema
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            gpbDatos.BackColor = Color.Cyan;
+            gpbDatos.BackColor = System.Drawing.ColorTranslator.FromHtml("#9FA2CC");
             lblEstado.Text = "MODIFICANDO UN PRODUCTO";
             accionBotonOK = operacionCRUD.Actualizar;
             gpbDatos.Enabled = true;
@@ -189,7 +189,7 @@ namespace Super_Sistema
                     MessageBox.Show("Sí jala el \"Actualizar\"", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case operacionCRUD.Eliminar:
-                    MessageBox.Show("Sí jala el \"eLIMINAR\"", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sí jala el \"Eliminar\"", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
                     MessageBox.Show("Error en acción de botón OK.\nCierre el programa y vuélvalo a abrir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
