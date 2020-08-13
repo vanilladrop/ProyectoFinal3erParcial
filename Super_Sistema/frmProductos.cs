@@ -16,6 +16,16 @@ namespace Super_Sistema
         private readonly static string datosConexion = "server=localhost; database=ProyectoBDTienda; UID=root; password=; ConvertZeroDateTime=true";
         readonly MySqlConnection conexion = new MySqlConnection(datosConexion);
 
+        enum operacionCRUD
+        {
+            Crear,
+            Leer,
+            Actualizar,
+            Eliminar,
+        }
+
+        operacionCRUD accionBotonOK = operacionCRUD.Leer;
+
         public frmProductos()
         {
             InitializeComponent();
@@ -41,10 +51,8 @@ namespace Super_Sistema
 
         private void limpiar()
         {
-            cboIdProducto.SelectedItem = 0;
-            cboIdProducto.Text = "";
-            cboNombre.SelectedItem = 0;
-            cboIdProducto.Text = "";
+            txtIdProducto.Text = "";
+            txtNombre.Text = "";
             nudCostoMayoreo.Value = 0;
             nudPrecioVenta.Value = 0;
             nudInventario.Value = 0;
@@ -98,6 +106,51 @@ namespace Super_Sistema
         private void btnVentas_Click(object sender, EventArgs e)
         {
             mostrarMensajeConstruccion();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            gpbDatos.BackColor = Color.Red;
+            lblEstado.Text = "ELIMINANDO UN PRODUCTO";
+            accionBotonOK = operacionCRUD.Eliminar;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            gpbDatos.BackColor = Color.Green;
+            gpbDatos.Enabled = true;
+            gpbBotones.Enabled = true;
+            lblEstado.Text = "AÑADIENDO UN PRODUCTO";
+            accionBotonOK = operacionCRUD.Crear;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            gpbDatos.BackColor = Color.Cyan;
+            lblEstado.Text = "MODIFICANDO UN PRODUCTO";
+            accionBotonOK = operacionCRUD.Actualizar;
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            switch (accionBotonOK)
+            {
+                case operacionCRUD.Crear:
+                    MessageBox.Show("Sí jala el \"crear\"", "Crear", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case operacionCRUD.Leer:
+                    MessageBox.Show("Sí jala el \"Leer\"", "Leer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case operacionCRUD.Actualizar:
+                    MessageBox.Show("Sí jala el \"Actualizar\"", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case operacionCRUD.Eliminar:
+                    MessageBox.Show("Sí jala el \"eLIMINAR\"", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                default:
+                    MessageBox.Show("Error en acción de botón OK.\nCierre el programa y vuélvalo a abrir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
         }
     }
 }

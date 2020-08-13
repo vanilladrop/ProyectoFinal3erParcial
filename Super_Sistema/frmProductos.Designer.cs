@@ -42,23 +42,25 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.gpbDatos = new System.Windows.Forms.GroupBox();
+            this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
+            this.nudCostoMayoreo = new System.Windows.Forms.NumericUpDown();
             this.nudInventario = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboNombre = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboIdProducto = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.nudCostoMayoreo = new System.Windows.Forms.NumericUpDown();
-            this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
+            this.gpbBotones = new System.Windows.Forms.GroupBox();
+            this.txtIdProducto = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnAyuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -67,9 +69,10 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gpbDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).BeginInit();
+            this.gpbBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -231,6 +234,9 @@
             // gpbDatos
             // 
             this.gpbDatos.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gpbDatos.Controls.Add(this.btnAyuda);
+            this.gpbDatos.Controls.Add(this.txtNombre);
+            this.gpbDatos.Controls.Add(this.txtIdProducto);
             this.gpbDatos.Controls.Add(this.nudPrecioVenta);
             this.gpbDatos.Controls.Add(this.nudCostoMayoreo);
             this.gpbDatos.Controls.Add(this.nudInventario);
@@ -238,18 +244,41 @@
             this.gpbDatos.Controls.Add(this.label6);
             this.gpbDatos.Controls.Add(this.label5);
             this.gpbDatos.Controls.Add(this.label4);
-            this.gpbDatos.Controls.Add(this.cboNombre);
             this.gpbDatos.Controls.Add(this.label3);
-            this.gpbDatos.Controls.Add(this.cboIdProducto);
-            this.gpbDatos.Controls.Add(this.label2);
+            this.gpbDatos.Controls.Add(this.lblEstado);
             this.gpbDatos.Controls.Add(this.label1);
-            this.gpbDatos.Controls.Add(this.btnLimpiar);
-            this.gpbDatos.Controls.Add(this.btnOk);
+            this.gpbDatos.Enabled = false;
             this.gpbDatos.Location = new System.Drawing.Point(840, 0);
             this.gpbDatos.Name = "gpbDatos";
-            this.gpbDatos.Size = new System.Drawing.Size(241, 343);
+            this.gpbDatos.Size = new System.Drawing.Size(241, 265);
             this.gpbDatos.TabIndex = 24;
             this.gpbDatos.TabStop = false;
+            // 
+            // nudPrecioVenta
+            // 
+            this.nudPrecioVenta.DecimalPlaces = 2;
+            this.nudPrecioVenta.Location = new System.Drawing.Point(82, 119);
+            this.nudPrecioVenta.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nudPrecioVenta.Name = "nudPrecioVenta";
+            this.nudPrecioVenta.Size = new System.Drawing.Size(153, 20);
+            this.nudPrecioVenta.TabIndex = 41;
+            // 
+            // nudCostoMayoreo
+            // 
+            this.nudCostoMayoreo.DecimalPlaces = 2;
+            this.nudCostoMayoreo.Location = new System.Drawing.Point(90, 91);
+            this.nudCostoMayoreo.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nudCostoMayoreo.Name = "nudCostoMayoreo";
+            this.nudCostoMayoreo.Size = new System.Drawing.Size(145, 20);
+            this.nudCostoMayoreo.TabIndex = 40;
             // 
             // nudInventario
             // 
@@ -299,15 +328,6 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre";
             // 
-            // cboNombre
-            // 
-            this.cboNombre.FormattingEnabled = true;
-            this.cboNombre.Location = new System.Drawing.Point(54, 62);
-            this.cboNombre.MaxLength = 50;
-            this.cboNombre.Name = "cboNombre";
-            this.cboNombre.Size = new System.Drawing.Size(181, 21);
-            this.cboNombre.TabIndex = 31;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -318,25 +338,16 @@
             this.label3.Text = "ID Producto";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // cboIdProducto
+            // lblEstado
             // 
-            this.cboIdProducto.FormattingEnabled = true;
-            this.cboIdProducto.Location = new System.Drawing.Point(76, 35);
-            this.cboIdProducto.MaxLength = 13;
-            this.cboIdProducto.Name = "cboIdProducto";
-            this.cboIdProducto.Size = new System.Drawing.Size(159, 21);
-            this.cboIdProducto.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "PLACEHOLDER";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(51, 16);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(158, 13);
+            this.lblEstado.TabIndex = 28;
+            this.lblEstado.Text = "Seleccionando una opción";
+            this.lblEstado.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -351,9 +362,9 @@
             // 
             this.btnLimpiar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLimpiar.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(6, 293);
+            this.btnLimpiar.Location = new System.Drawing.Point(6, 19);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(120, 44);
+            this.btnLimpiar.Size = new System.Drawing.Size(110, 44);
             this.btnLimpiar.TabIndex = 26;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -363,12 +374,13 @@
             // 
             this.btnOk.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnOk.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(132, 293);
+            this.btnOk.Location = new System.Drawing.Point(119, 19);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(103, 44);
+            this.btnOk.Size = new System.Drawing.Size(110, 44);
             this.btnOk.TabIndex = 25;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnNuevo
             // 
@@ -380,6 +392,7 @@
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEliminar
             // 
@@ -391,6 +404,7 @@
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -402,32 +416,43 @@
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // nudCostoMayoreo
+            // gpbBotones
             // 
-            this.nudCostoMayoreo.DecimalPlaces = 2;
-            this.nudCostoMayoreo.Location = new System.Drawing.Point(90, 91);
-            this.nudCostoMayoreo.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.nudCostoMayoreo.Name = "nudCostoMayoreo";
-            this.nudCostoMayoreo.Size = new System.Drawing.Size(145, 20);
-            this.nudCostoMayoreo.TabIndex = 40;
+            this.gpbBotones.Controls.Add(this.btnLimpiar);
+            this.gpbBotones.Controls.Add(this.btnOk);
+            this.gpbBotones.Enabled = false;
+            this.gpbBotones.Location = new System.Drawing.Point(840, 271);
+            this.gpbBotones.Name = "gpbBotones";
+            this.gpbBotones.Size = new System.Drawing.Size(235, 72);
+            this.gpbBotones.TabIndex = 27;
+            this.gpbBotones.TabStop = false;
             // 
-            // nudPrecioVenta
+            // txtIdProducto
             // 
-            this.nudPrecioVenta.DecimalPlaces = 2;
-            this.nudPrecioVenta.Location = new System.Drawing.Point(82, 119);
-            this.nudPrecioVenta.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.nudPrecioVenta.Name = "nudPrecioVenta";
-            this.nudPrecioVenta.Size = new System.Drawing.Size(153, 20);
-            this.nudPrecioVenta.TabIndex = 41;
+            this.txtIdProducto.Location = new System.Drawing.Point(76, 36);
+            this.txtIdProducto.Name = "txtIdProducto";
+            this.txtIdProducto.Size = new System.Drawing.Size(159, 20);
+            this.txtIdProducto.TabIndex = 42;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(56, 65);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(179, 20);
+            this.txtNombre.TabIndex = 43;
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAyuda.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAyuda.Location = new System.Drawing.Point(160, 229);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(75, 30);
+            this.btnAyuda.TabIndex = 28;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.UseVisualStyleBackColor = false;
             // 
             // frmProductos
             // 
@@ -450,6 +475,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnProductos);
+            this.Controls.Add(this.gpbBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmProductos";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -465,9 +491,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.gpbDatos.ResumeLayout(false);
             this.gpbDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).EndInit();
+            this.gpbBotones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -490,7 +517,7 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnOk;
@@ -500,9 +527,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboNombre;
-        private System.Windows.Forms.ComboBox cboIdProducto;
         private System.Windows.Forms.NumericUpDown nudPrecioVenta;
         private System.Windows.Forms.NumericUpDown nudCostoMayoreo;
+        private System.Windows.Forms.GroupBox gpbBotones;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtIdProducto;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }
