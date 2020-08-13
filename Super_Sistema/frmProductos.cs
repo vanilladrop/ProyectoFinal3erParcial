@@ -22,9 +22,10 @@ namespace Super_Sistema
             Leer,
             Actualizar,
             Eliminar,
+            Ninguno
         }
 
-        operacionCRUD accionBotonOK = operacionCRUD.Leer;
+        operacionCRUD accionBotonOK = operacionCRUD.Ninguno;
 
         public frmProductos()
         {
@@ -70,7 +71,21 @@ namespace Super_Sistema
 
         private void button5_Click(object sender, EventArgs e)
         {
-            cerrarPadre();
+            if (accionBotonOK != operacionCRUD.Ninguno)
+            {
+                if (accionBotonOK != operacionCRUD.Leer)
+                {
+                    DialogResult resultado = MessageBox.Show("¿Seguro que desea salir? Perderá la información no guardada", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        cerrarPadre();
+                    }
+                }
+            }
+            else
+            {
+                cerrarPadre();
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -80,7 +95,29 @@ namespace Super_Sistema
 
         private void frmProductos_FormClosing(object sender, FormClosingEventArgs e)
         {
-            cerrarPadre();
+            if (accionBotonOK != operacionCRUD.Ninguno)
+            {
+                if (accionBotonOK != operacionCRUD.Leer && accionBotonOK != operacionCRUD.Eliminar)
+                {
+                    DialogResult resultado = MessageBox.Show("¿Seguro que desea salir? Perderá la información no guardada", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        cerrarPadre();
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    cerrarPadre();
+                }
+            }
+            else
+            {
+                cerrarPadre();
+            }
         }
 
         private void cerrarPadre()
@@ -113,6 +150,9 @@ namespace Super_Sistema
             gpbDatos.BackColor = Color.Red;
             lblEstado.Text = "ELIMINANDO UN PRODUCTO";
             accionBotonOK = operacionCRUD.Eliminar;
+            gpbDatos.Enabled = true;
+            gpbBotones.Enabled = true;
+            limpiar();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -122,6 +162,7 @@ namespace Super_Sistema
             gpbBotones.Enabled = true;
             lblEstado.Text = "AÑADIENDO UN PRODUCTO";
             accionBotonOK = operacionCRUD.Crear;
+            limpiar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -129,6 +170,9 @@ namespace Super_Sistema
             gpbDatos.BackColor = Color.Cyan;
             lblEstado.Text = "MODIFICANDO UN PRODUCTO";
             accionBotonOK = operacionCRUD.Actualizar;
+            gpbDatos.Enabled = true;
+            gpbBotones.Enabled = true;
+            limpiar();
         }
 
         private void btnOk_Click(object sender, EventArgs e)
