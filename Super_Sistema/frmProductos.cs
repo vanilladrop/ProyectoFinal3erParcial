@@ -19,7 +19,7 @@ namespace Super_Sistema
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -28,6 +28,11 @@ namespace Super_Sistema
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
