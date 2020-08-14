@@ -45,16 +45,47 @@ DESCRIBE productos;
 DESCRIBE venta;
 DESCRIBE productosVenta;
 
-LOAD DATA INFILE "F:/Documents/UPP/3er Cuatrimestre/Fundamentos de Bases de Datos/Proyecto/ProyectoFinal3erParcial/productos.csv"
+LOAD DATA INFILE "C:/Users/Mariano CH/Documents/UPP/3/MATERIAS/FUNDAMENTOS DE BASES DE DATOS/3/Proyecto/productos.csv"
 INTO TABLE productos
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE "F:/Documents/UPP/3er Cuatrimestre/Fundamentos de Bases de Datos/Proyecto/ProyectoFinal3erParcial/productosVenta.csv"
+LOAD DATA INFILE "C:/Users/Mariano CH/Documents/UPP/3/MATERIAS/FUNDAMENTOS DE BASES DE DATOS/3/Proyecto/clientes.csv"
+INTO TABLE cliente
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE "C:/Users/Mariano CH/Documents/UPP/3/MATERIAS/FUNDAMENTOS DE BASES DE DATOS/3/Proyecto/empelados.csv"
+INTO TABLE empleado
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE "C:/Users/Mariano CH/Documents/UPP/3/MATERIAS/FUNDAMENTOS DE BASES DE DATOS/3/Proyecto/ventas.csv"
+INTO TABLE venta
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE "C:/Users/Mariano CH/Documents/UPP/3/MATERIAS/FUNDAMENTOS DE BASES DE DATOS/3/Proyecto/productosVenta.csv"
 INTO TABLE productosVenta
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
+SELECT * FROM productos;
+SELECT * FROM cliente;
+SELECT * FROM empleado;
+SELECT * FROM venta;
+SELECT * FROM productosVenta;
+
+SELECT SUM(productos.precioVenta) FROM productos
+JOIN productosVenta ON(productosVenta.idProducto = productos.idProducto)
+GROUP BY productosVenta.idVenta;
