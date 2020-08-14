@@ -51,3 +51,10 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
+LOAD DATA INFILE "F:/Documents/UPP/3er Cuatrimestre/Fundamentos de Bases de Datos/Proyecto/ProyectoFinal3erParcial/productosVenta.csv"
+INTO TABLE productosVenta
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
