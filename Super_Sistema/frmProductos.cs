@@ -105,6 +105,7 @@ namespace Super_Sistema
             {
                 case operacionCRUD.Leer:
                     limpiarBusqueda();
+                    llenarDGV();
                     break;
                 default:
                     limpiar();
@@ -232,6 +233,7 @@ namespace Super_Sistema
                 conexion.Close();
                 MessageBox.Show("Producto \"" + txtNombre.Text + "\" con código de barras \"" + txtIdProducto.Text + "\" añadido al inventario.", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 llenarDGV();
+                llenarCBOs();
                 limpiar();
             }
             catch (MySqlException excepcionSQL)
@@ -272,9 +274,9 @@ namespace Super_Sistema
                 MySqlCommand comando = new MySqlCommand(busqueda, conexion);
                 comando.Parameters.AddWithValue("@idProducto", cboCodigoBarrasBusqueda.Text);
                 comando.Parameters.AddWithValue("@nombre", cboNombreProductoBusqueda.Text);
-                comando.Parameters.AddWithValue("@costoMayoreo", float.Parse(nudCostoMayoreoBusqueda.Text));
-                comando.Parameters.AddWithValue("@precioVenta", float.Parse(nudPrecioVenta.Text));
-                comando.Parameters.AddWithValue("@enInventario", int.Parse(nudInventario.Text));
+                comando.Parameters.AddWithValue("@costoMayoreo", nudCostoMayoreoBusqueda.Value);
+                comando.Parameters.AddWithValue("@precioVenta", nudPrecioVentaBusqueda.Value);
+                comando.Parameters.AddWithValue("@enInventario", nudInventarioBusqueda.Value);
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
                 da.Fill(dt);
                 conexion.Close();
@@ -309,6 +311,7 @@ namespace Super_Sistema
                     limpiar();
                     desactivarControles();
                     llenarDGV();
+                    llenarCBOs();
                 }
                 conexion.Close();
             }
@@ -337,6 +340,7 @@ namespace Super_Sistema
                     limpiar();
                     desactivarControles();
                     llenarDGV();
+                    llenarCBOs();
                 }
                 conexion.Close();
             }
@@ -352,8 +356,8 @@ namespace Super_Sistema
             DataGridViewRow registroActual = dgvProductos.CurrentRow;
             txtIdProducto.Text = registroActual.Cells[0].Value.ToString();
             txtNombre.Text = registroActual.Cells[1].Value.ToString();
-
-            if (decimal.TryParse(registroActual.Cells[2].Value.ToString(), out decimal costoMayoreo))
+            decimal costoMayoreo;
+            if (decimal.TryParse(registroActual.Cells[2].Value.ToString(), out _))
             {
                 costoMayoreo = decimal.Parse(registroActual.Cells[2].Value.ToString());
             }
@@ -362,9 +366,8 @@ namespace Super_Sistema
                 costoMayoreo = 0;
             }
             nudCostoMayoreo.Value = costoMayoreo;
-
-
-            if (decimal.TryParse(registroActual.Cells[3].Value.ToString(), out decimal precioVenta))
+            decimal precioVenta;
+            if (decimal.TryParse(registroActual.Cells[3].Value.ToString(), out _))
             {
                 precioVenta = decimal.Parse(registroActual.Cells[3].Value.ToString());
             }
@@ -373,9 +376,8 @@ namespace Super_Sistema
                 precioVenta = 0;
             }
             nudPrecioVenta.Value = precioVenta;
-
-
-            if (int.TryParse(registroActual.Cells[4].Value.ToString(), out int enInventario))
+            int enInventario;
+            if (int.TryParse(registroActual.Cells[4].Value.ToString(), out _))
             {
                 enInventario = int.Parse(registroActual.Cells[4].Value.ToString());
             }
@@ -451,40 +453,40 @@ namespace Super_Sistema
         private void llenarCBOs()
         {
             string queryIdProducto = "SELECT DISTINCT idProducto FROM productos",
-                   queryNombre = "SELECT DISTINCT nombre FROM productos",
-                   queryCostoMayoreo = "SELECT DISTINCT costoMayoreo FROM productos",
-                   queryPrecioVenta = "SELECT DISTINCT precioVenta FROM productos",
-                   queryInventario = "SELECT DISTINCT enInventario FROM productos";
+                   queryNombre = "SELECT DISTINCT nombre FROM productos";
+            /*queryCostoMayoreo = "SELECT DISTINCT costoMayoreo FROM productos",
+            queryPrecioVenta = "SELECT DISTINCT precioVenta FROM productos",
+            queryInventario = "SELECT DISTINCT enInventario FROM productos";*/
 
             DataTable dtIdProducto = new DataTable(),
-                      dtNombre = new DataTable(),
-                      dtCostoMayoreo = new DataTable(),
-                      dtPrecioVenta = new DataTable(),
-                      dtInventario = new DataTable();
+                      dtNombre = new DataTable();
+            /*dtCostoMayoreo = new DataTable(),
+            dtPrecioVenta = new DataTable(),
+            dtInventario = new DataTable();*/
 
             MySqlCommand comandoIdProducto = new MySqlCommand(queryIdProducto, conexion),
-                         comandoNombre = new MySqlCommand(queryNombre, conexion),
-                         comandoCostoMayoreo = new MySqlCommand(queryCostoMayoreo, conexion),
-                         comandoPrecioVenta = new MySqlCommand(queryPrecioVenta, conexion),
-                         comandoInventario = new MySqlCommand(queryInventario, conexion);
+                         comandoNombre = new MySqlCommand(queryNombre, conexion);
+            /*comandoCostoMayoreo = new MySqlCommand(queryCostoMayoreo, conexion),
+            comandoPrecioVenta = new MySqlCommand(queryPrecioVenta, conexion),
+            comandoInventario = new MySqlCommand(queryInventario, conexion);*/
 
             MySqlDataAdapter daIdProducto = new MySqlDataAdapter(comandoIdProducto),
-                             daNombre = new MySqlDataAdapter(comandoNombre),
-                             daCostoMayoreo = new MySqlDataAdapter(comandoCostoMayoreo),
+                             daNombre = new MySqlDataAdapter(comandoNombre);
+                             /*daCostoMayoreo = new MySqlDataAdapter(comandoCostoMayoreo),
                              daPrecioVenta = new MySqlDataAdapter(comandoPrecioVenta),
-                             daInventario = new MySqlDataAdapter(comandoInventario);
+                             daInventario = new MySqlDataAdapter(comandoInventario);*/
 
             daIdProducto.Fill(dtIdProducto);
             daNombre.Fill(dtNombre);
-            daCostoMayoreo.Fill(dtCostoMayoreo);
+            /*daCostoMayoreo.Fill(dtCostoMayoreo);
             daPrecioVenta.Fill(dtPrecioVenta);
-            daInventario.Fill(dtInventario);
+            daInventario.Fill(dtInventario);*/
 
             int filasIdProducto = dtIdProducto.Rows.Count,
                 filasNombre = dtNombre.Rows.Count,
-                filasCostoMayoreo = dtCostoMayoreo.Rows.Count,
+                /*filasCostoMayoreo = dtCostoMayoreo.Rows.Count,
                 filasPrecioVenta = dtPrecioVenta.Rows.Count,
-                filasInventario = dtInventario.Rows.Count,
+                filasInventario = dtInventario.Rows.Count,*/
                 i = 0;
 
             while (i < filasIdProducto)
@@ -498,8 +500,8 @@ namespace Super_Sistema
                 cboNombreProductoBusqueda.Items.Add(dtNombre.Rows[i].Field<string>(0));
                 i++;
             }
-            i = 0;
-            /*while (i < filasCostoMayoreo)
+            /*i = 0;
+            while (i < filasCostoMayoreo)
             {
                 cboCostoMayoreoBusqueda.Items.Add(dtCostoMayoreo.Rows[i].Field<decimal>(0));
                 i++;

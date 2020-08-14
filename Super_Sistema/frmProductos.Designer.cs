@@ -42,6 +42,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.gpbDatos = new System.Windows.Forms.GroupBox();
+            this.btnAyuda = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
             this.nudCostoMayoreo = new System.Windows.Forms.NumericUpDown();
             this.nudInventario = new System.Windows.Forms.NumericUpDown();
@@ -58,23 +61,20 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.gpbBotones = new System.Windows.Forms.GroupBox();
-            this.txtIdProducto = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnAyuda = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.gpbBusqueda = new System.Windows.Forms.GroupBox();
+            this.nudInventarioBusqueda = new System.Windows.Forms.NumericUpDown();
+            this.nudPrecioVentaBusqueda = new System.Windows.Forms.NumericUpDown();
+            this.nudCostoMayoreoBusqueda = new System.Windows.Forms.NumericUpDown();
+            this.cboNombreProductoBusqueda = new System.Windows.Forms.ComboBox();
+            this.cboCodigoBarrasBusqueda = new System.Windows.Forms.ComboBox();
+            this.rdbInventario = new System.Windows.Forms.RadioButton();
+            this.rdbPrecioVenta = new System.Windows.Forms.RadioButton();
+            this.rdbCostoMayoreo = new System.Windows.Forms.RadioButton();
+            this.rdbNombreProducto = new System.Windows.Forms.RadioButton();
+            this.rdbCodigoDeBarras = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.rdbCodigoDeBarras = new System.Windows.Forms.RadioButton();
-            this.rdbNombreProducto = new System.Windows.Forms.RadioButton();
-            this.rdbCostoMayoreo = new System.Windows.Forms.RadioButton();
-            this.rdbPrecioVenta = new System.Windows.Forms.RadioButton();
-            this.rdbInventario = new System.Windows.Forms.RadioButton();
-            this.cboCodigoBarrasBusqueda = new System.Windows.Forms.ComboBox();
-            this.cboNombreProductoBusqueda = new System.Windows.Forms.ComboBox();
-            this.nudCostoMayoreoBusqueda = new System.Windows.Forms.NumericUpDown();
-            this.nudPrecioVentaBusqueda = new System.Windows.Forms.NumericUpDown();
-            this.nudInventarioBusqueda = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -88,9 +88,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).BeginInit();
             this.gpbBotones.SuspendLayout();
             this.gpbBusqueda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreoBusqueda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVentaBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInventarioBusqueda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVentaBusqueda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreoBusqueda)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -275,6 +275,31 @@
             this.gpbDatos.TabIndex = 24;
             this.gpbDatos.TabStop = false;
             // 
+            // btnAyuda
+            // 
+            this.btnAyuda.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAyuda.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAyuda.Location = new System.Drawing.Point(160, 229);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(75, 30);
+            this.btnAyuda.TabIndex = 28;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.UseVisualStyleBackColor = false;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(56, 65);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(179, 20);
+            this.txtNombre.TabIndex = 2;
+            // 
+            // txtIdProducto
+            // 
+            this.txtIdProducto.Location = new System.Drawing.Point(76, 36);
+            this.txtIdProducto.Name = "txtIdProducto";
+            this.txtIdProducto.Size = new System.Drawing.Size(159, 20);
+            this.txtIdProducto.TabIndex = 1;
+            // 
             // nudPrecioVenta
             // 
             this.nudPrecioVenta.DecimalPlaces = 2;
@@ -450,31 +475,6 @@
             this.gpbBotones.TabIndex = 27;
             this.gpbBotones.TabStop = false;
             // 
-            // txtIdProducto
-            // 
-            this.txtIdProducto.Location = new System.Drawing.Point(76, 36);
-            this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.Size = new System.Drawing.Size(159, 20);
-            this.txtIdProducto.TabIndex = 1;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(56, 65);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(179, 20);
-            this.txtNombre.TabIndex = 2;
-            // 
-            // btnAyuda
-            // 
-            this.btnAyuda.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAyuda.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAyuda.Location = new System.Drawing.Point(160, 229);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(75, 30);
-            this.btnAyuda.TabIndex = 28;
-            this.btnAyuda.Text = "Ayuda";
-            this.btnAyuda.UseVisualStyleBackColor = false;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -509,6 +509,127 @@
             this.gpbBusqueda.TabIndex = 29;
             this.gpbBusqueda.TabStop = false;
             // 
+            // nudInventarioBusqueda
+            // 
+            this.nudInventarioBusqueda.Enabled = false;
+            this.nudInventarioBusqueda.Location = new System.Drawing.Point(6, 204);
+            this.nudInventarioBusqueda.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nudInventarioBusqueda.Name = "nudInventarioBusqueda";
+            this.nudInventarioBusqueda.Size = new System.Drawing.Size(110, 20);
+            this.nudInventarioBusqueda.TabIndex = 36;
+            // 
+            // nudPrecioVentaBusqueda
+            // 
+            this.nudPrecioVentaBusqueda.DecimalPlaces = 2;
+            this.nudPrecioVentaBusqueda.Enabled = false;
+            this.nudPrecioVentaBusqueda.Location = new System.Drawing.Point(125, 154);
+            this.nudPrecioVentaBusqueda.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nudPrecioVentaBusqueda.Name = "nudPrecioVentaBusqueda";
+            this.nudPrecioVentaBusqueda.Size = new System.Drawing.Size(110, 20);
+            this.nudPrecioVentaBusqueda.TabIndex = 36;
+            // 
+            // nudCostoMayoreoBusqueda
+            // 
+            this.nudCostoMayoreoBusqueda.DecimalPlaces = 2;
+            this.nudCostoMayoreoBusqueda.Enabled = false;
+            this.nudCostoMayoreoBusqueda.Location = new System.Drawing.Point(6, 155);
+            this.nudCostoMayoreoBusqueda.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nudCostoMayoreoBusqueda.Name = "nudCostoMayoreoBusqueda";
+            this.nudCostoMayoreoBusqueda.Size = new System.Drawing.Size(113, 20);
+            this.nudCostoMayoreoBusqueda.TabIndex = 36;
+            // 
+            // cboNombreProductoBusqueda
+            // 
+            this.cboNombreProductoBusqueda.Enabled = false;
+            this.cboNombreProductoBusqueda.FormattingEnabled = true;
+            this.cboNombreProductoBusqueda.Location = new System.Drawing.Point(6, 104);
+            this.cboNombreProductoBusqueda.MaxLength = 50;
+            this.cboNombreProductoBusqueda.Name = "cboNombreProductoBusqueda";
+            this.cboNombreProductoBusqueda.Size = new System.Drawing.Size(228, 21);
+            this.cboNombreProductoBusqueda.TabIndex = 35;
+            // 
+            // cboCodigoBarrasBusqueda
+            // 
+            this.cboCodigoBarrasBusqueda.Enabled = false;
+            this.cboCodigoBarrasBusqueda.FormattingEnabled = true;
+            this.cboCodigoBarrasBusqueda.Location = new System.Drawing.Point(7, 55);
+            this.cboCodigoBarrasBusqueda.MaxLength = 13;
+            this.cboCodigoBarrasBusqueda.Name = "cboCodigoBarrasBusqueda";
+            this.cboCodigoBarrasBusqueda.Size = new System.Drawing.Size(228, 21);
+            this.cboCodigoBarrasBusqueda.TabIndex = 34;
+            // 
+            // rdbInventario
+            // 
+            this.rdbInventario.AutoSize = true;
+            this.rdbInventario.Location = new System.Drawing.Point(6, 181);
+            this.rdbInventario.Name = "rdbInventario";
+            this.rdbInventario.Size = new System.Drawing.Size(90, 17);
+            this.rdbInventario.TabIndex = 33;
+            this.rdbInventario.TabStop = true;
+            this.rdbInventario.Text = "En inventario:";
+            this.rdbInventario.UseVisualStyleBackColor = true;
+            this.rdbInventario.CheckedChanged += new System.EventHandler(this.rdbInventario_CheckedChanged);
+            // 
+            // rdbPrecioVenta
+            // 
+            this.rdbPrecioVenta.AutoSize = true;
+            this.rdbPrecioVenta.Location = new System.Drawing.Point(124, 131);
+            this.rdbPrecioVenta.Name = "rdbPrecioVenta";
+            this.rdbPrecioVenta.Size = new System.Drawing.Size(103, 17);
+            this.rdbPrecioVenta.TabIndex = 32;
+            this.rdbPrecioVenta.TabStop = true;
+            this.rdbPrecioVenta.Text = "Precio de venta:";
+            this.rdbPrecioVenta.UseVisualStyleBackColor = true;
+            this.rdbPrecioVenta.CheckedChanged += new System.EventHandler(this.rdbPrecioVenta_CheckedChanged);
+            // 
+            // rdbCostoMayoreo
+            // 
+            this.rdbCostoMayoreo.AutoSize = true;
+            this.rdbCostoMayoreo.Location = new System.Drawing.Point(6, 131);
+            this.rdbCostoMayoreo.Name = "rdbCostoMayoreo";
+            this.rdbCostoMayoreo.Size = new System.Drawing.Size(113, 17);
+            this.rdbCostoMayoreo.TabIndex = 31;
+            this.rdbCostoMayoreo.TabStop = true;
+            this.rdbCostoMayoreo.Text = "Costo de mayoreo:";
+            this.rdbCostoMayoreo.UseVisualStyleBackColor = true;
+            this.rdbCostoMayoreo.CheckedChanged += new System.EventHandler(this.rdbCostoMayoreo_CheckedChanged);
+            // 
+            // rdbNombreProducto
+            // 
+            this.rdbNombreProducto.AutoSize = true;
+            this.rdbNombreProducto.Location = new System.Drawing.Point(6, 81);
+            this.rdbNombreProducto.Name = "rdbNombreProducto";
+            this.rdbNombreProducto.Size = new System.Drawing.Size(62, 17);
+            this.rdbNombreProducto.TabIndex = 30;
+            this.rdbNombreProducto.TabStop = true;
+            this.rdbNombreProducto.Text = "Nombre";
+            this.rdbNombreProducto.UseVisualStyleBackColor = true;
+            this.rdbNombreProducto.CheckedChanged += new System.EventHandler(this.rdbNombreProducto_CheckedChanged);
+            // 
+            // rdbCodigoDeBarras
+            // 
+            this.rdbCodigoDeBarras.AutoSize = true;
+            this.rdbCodigoDeBarras.Location = new System.Drawing.Point(6, 32);
+            this.rdbCodigoDeBarras.Name = "rdbCodigoDeBarras";
+            this.rdbCodigoDeBarras.Size = new System.Drawing.Size(108, 17);
+            this.rdbCodigoDeBarras.TabIndex = 29;
+            this.rdbCodigoDeBarras.TabStop = true;
+            this.rdbCodigoDeBarras.Text = "Código de barras:";
+            this.rdbCodigoDeBarras.UseVisualStyleBackColor = true;
+            this.rdbCodigoDeBarras.CheckedChanged += new System.EventHandler(this.rdbCodigoDeBarras_CheckedChanged);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -527,127 +648,6 @@
             this.label13.Size = new System.Drawing.Size(39, 13);
             this.label13.TabIndex = 27;
             this.label13.Text = "Estás: ";
-            // 
-            // rdbCodigoDeBarras
-            // 
-            this.rdbCodigoDeBarras.AutoSize = true;
-            this.rdbCodigoDeBarras.Location = new System.Drawing.Point(6, 32);
-            this.rdbCodigoDeBarras.Name = "rdbCodigoDeBarras";
-            this.rdbCodigoDeBarras.Size = new System.Drawing.Size(108, 17);
-            this.rdbCodigoDeBarras.TabIndex = 29;
-            this.rdbCodigoDeBarras.TabStop = true;
-            this.rdbCodigoDeBarras.Text = "Código de barras:";
-            this.rdbCodigoDeBarras.UseVisualStyleBackColor = true;
-            this.rdbCodigoDeBarras.CheckedChanged += new System.EventHandler(this.rdbCodigoDeBarras_CheckedChanged);
-            // 
-            // rdbNombreProducto
-            // 
-            this.rdbNombreProducto.AutoSize = true;
-            this.rdbNombreProducto.Location = new System.Drawing.Point(6, 81);
-            this.rdbNombreProducto.Name = "rdbNombreProducto";
-            this.rdbNombreProducto.Size = new System.Drawing.Size(62, 17);
-            this.rdbNombreProducto.TabIndex = 30;
-            this.rdbNombreProducto.TabStop = true;
-            this.rdbNombreProducto.Text = "Nombre";
-            this.rdbNombreProducto.UseVisualStyleBackColor = true;
-            this.rdbNombreProducto.CheckedChanged += new System.EventHandler(this.rdbNombreProducto_CheckedChanged);
-            // 
-            // rdbCostoMayoreo
-            // 
-            this.rdbCostoMayoreo.AutoSize = true;
-            this.rdbCostoMayoreo.Location = new System.Drawing.Point(6, 131);
-            this.rdbCostoMayoreo.Name = "rdbCostoMayoreo";
-            this.rdbCostoMayoreo.Size = new System.Drawing.Size(113, 17);
-            this.rdbCostoMayoreo.TabIndex = 31;
-            this.rdbCostoMayoreo.TabStop = true;
-            this.rdbCostoMayoreo.Text = "Costo de mayoreo:";
-            this.rdbCostoMayoreo.UseVisualStyleBackColor = true;
-            this.rdbCostoMayoreo.CheckedChanged += new System.EventHandler(this.rdbCostoMayoreo_CheckedChanged);
-            // 
-            // rdbPrecioVenta
-            // 
-            this.rdbPrecioVenta.AutoSize = true;
-            this.rdbPrecioVenta.Location = new System.Drawing.Point(124, 131);
-            this.rdbPrecioVenta.Name = "rdbPrecioVenta";
-            this.rdbPrecioVenta.Size = new System.Drawing.Size(103, 17);
-            this.rdbPrecioVenta.TabIndex = 32;
-            this.rdbPrecioVenta.TabStop = true;
-            this.rdbPrecioVenta.Text = "Precio de venta:";
-            this.rdbPrecioVenta.UseVisualStyleBackColor = true;
-            this.rdbPrecioVenta.CheckedChanged += new System.EventHandler(this.rdbPrecioVenta_CheckedChanged);
-            // 
-            // rdbInventario
-            // 
-            this.rdbInventario.AutoSize = true;
-            this.rdbInventario.Location = new System.Drawing.Point(6, 181);
-            this.rdbInventario.Name = "rdbInventario";
-            this.rdbInventario.Size = new System.Drawing.Size(90, 17);
-            this.rdbInventario.TabIndex = 33;
-            this.rdbInventario.TabStop = true;
-            this.rdbInventario.Text = "En inventario:";
-            this.rdbInventario.UseVisualStyleBackColor = true;
-            this.rdbInventario.CheckedChanged += new System.EventHandler(this.rdbInventario_CheckedChanged);
-            // 
-            // cboCodigoBarrasBusqueda
-            // 
-            this.cboCodigoBarrasBusqueda.Enabled = false;
-            this.cboCodigoBarrasBusqueda.FormattingEnabled = true;
-            this.cboCodigoBarrasBusqueda.Location = new System.Drawing.Point(7, 55);
-            this.cboCodigoBarrasBusqueda.MaxLength = 13;
-            this.cboCodigoBarrasBusqueda.Name = "cboCodigoBarrasBusqueda";
-            this.cboCodigoBarrasBusqueda.Size = new System.Drawing.Size(228, 21);
-            this.cboCodigoBarrasBusqueda.TabIndex = 34;
-            // 
-            // cboNombreProductoBusqueda
-            // 
-            this.cboNombreProductoBusqueda.Enabled = false;
-            this.cboNombreProductoBusqueda.FormattingEnabled = true;
-            this.cboNombreProductoBusqueda.Location = new System.Drawing.Point(6, 104);
-            this.cboNombreProductoBusqueda.MaxLength = 50;
-            this.cboNombreProductoBusqueda.Name = "cboNombreProductoBusqueda";
-            this.cboNombreProductoBusqueda.Size = new System.Drawing.Size(228, 21);
-            this.cboNombreProductoBusqueda.TabIndex = 35;
-            // 
-            // nudCostoMayoreoBusqueda
-            // 
-            this.nudCostoMayoreoBusqueda.DecimalPlaces = 2;
-            this.nudCostoMayoreoBusqueda.Enabled = false;
-            this.nudCostoMayoreoBusqueda.Location = new System.Drawing.Point(6, 155);
-            this.nudCostoMayoreoBusqueda.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.nudCostoMayoreoBusqueda.Name = "nudCostoMayoreoBusqueda";
-            this.nudCostoMayoreoBusqueda.Size = new System.Drawing.Size(113, 20);
-            this.nudCostoMayoreoBusqueda.TabIndex = 36;
-            // 
-            // nudPrecioVentaBusqueda
-            // 
-            this.nudPrecioVentaBusqueda.DecimalPlaces = 2;
-            this.nudPrecioVentaBusqueda.Enabled = false;
-            this.nudPrecioVentaBusqueda.Location = new System.Drawing.Point(125, 154);
-            this.nudPrecioVentaBusqueda.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.nudPrecioVentaBusqueda.Name = "nudPrecioVentaBusqueda";
-            this.nudPrecioVentaBusqueda.Size = new System.Drawing.Size(110, 20);
-            this.nudPrecioVentaBusqueda.TabIndex = 36;
-            // 
-            // nudInventarioBusqueda
-            // 
-            this.nudInventarioBusqueda.Enabled = false;
-            this.nudInventarioBusqueda.Location = new System.Drawing.Point(6, 204);
-            this.nudInventarioBusqueda.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.nudInventarioBusqueda.Name = "nudInventarioBusqueda";
-            this.nudInventarioBusqueda.Size = new System.Drawing.Size(110, 20);
-            this.nudInventarioBusqueda.TabIndex = 36;
             // 
             // frmProductos
             // 
@@ -671,8 +671,8 @@
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.gpbBotones);
-            this.Controls.Add(this.gpbBusqueda);
             this.Controls.Add(this.gpbDatos);
+            this.Controls.Add(this.gpbBusqueda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmProductos";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -694,9 +694,9 @@
             this.gpbBotones.ResumeLayout(false);
             this.gpbBusqueda.ResumeLayout(false);
             this.gpbBusqueda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreoBusqueda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVentaBusqueda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInventarioBusqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVentaBusqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreoBusqueda)).EndInit();
             this.ResumeLayout(false);
 
         }
