@@ -27,7 +27,7 @@ CREATE TABLE venta(
 	idVenta int(7) PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	idEmpleado int(4),
 	idCliente varchar(13),
-	montoTotal decimal(5,3),
+	montoTotal decimal(5,2),
 	FOREIGN KEY (idEmpleado) REFERENCES empleado(idEmpleado),
 	FOREIGN KEY (idCliente) REFERENCES cliente(RFC)
 );
