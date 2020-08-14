@@ -61,6 +61,20 @@
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAyuda = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.gpbBusqueda = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.rdbCodigoDeBarras = new System.Windows.Forms.RadioButton();
+            this.rdbNombreProducto = new System.Windows.Forms.RadioButton();
+            this.rdbCostoMayoreo = new System.Windows.Forms.RadioButton();
+            this.rdbPrecioVenta = new System.Windows.Forms.RadioButton();
+            this.rdbInventario = new System.Windows.Forms.RadioButton();
+            this.cboCodigoBarrasBusqueda = new System.Windows.Forms.ComboBox();
+            this.cboNombreProductoBusqueda = new System.Windows.Forms.ComboBox();
+            this.nudCostoMayoreoBusqueda = new System.Windows.Forms.NumericUpDown();
+            this.nudPrecioVentaBusqueda = new System.Windows.Forms.NumericUpDown();
+            this.nudInventarioBusqueda = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -73,6 +87,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).BeginInit();
             this.gpbBotones.SuspendLayout();
+            this.gpbBusqueda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreoBusqueda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVentaBusqueda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInventarioBusqueda)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -97,7 +115,7 @@
             this.btnSalir.Location = new System.Drawing.Point(0, 271);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(260, 72);
-            this.btnSalir.TabIndex = 21;
+            this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -125,7 +143,7 @@
             this.btnVentas.Location = new System.Drawing.Point(0, 203);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(260, 72);
-            this.btnVentas.TabIndex = 19;
+            this.btnVentas.TabIndex = 16;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVentas.UseVisualStyleBackColor = false;
@@ -153,7 +171,7 @@
             this.btnEmpleados.Location = new System.Drawing.Point(0, 135);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(260, 72);
-            this.btnEmpleados.TabIndex = 17;
+            this.btnEmpleados.TabIndex = 15;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEmpleados.UseVisualStyleBackColor = false;
@@ -229,7 +247,10 @@
             this.dgvProductos.Location = new System.Drawing.Point(7, 19);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(545, 256);
-            this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.TabIndex = 11;
+            this.dgvProductos.TabStop = false;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
+            this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
             // gpbDatos
             // 
@@ -265,7 +286,7 @@
             0});
             this.nudPrecioVenta.Name = "nudPrecioVenta";
             this.nudPrecioVenta.Size = new System.Drawing.Size(153, 20);
-            this.nudPrecioVenta.TabIndex = 41;
+            this.nudPrecioVenta.TabIndex = 4;
             // 
             // nudCostoMayoreo
             // 
@@ -278,7 +299,7 @@
             0});
             this.nudCostoMayoreo.Name = "nudCostoMayoreo";
             this.nudCostoMayoreo.Size = new System.Drawing.Size(145, 20);
-            this.nudCostoMayoreo.TabIndex = 40;
+            this.nudCostoMayoreo.TabIndex = 3;
             // 
             // nudInventario
             // 
@@ -290,7 +311,7 @@
             0});
             this.nudInventario.Name = "nudInventario";
             this.nudInventario.Size = new System.Drawing.Size(153, 20);
-            this.nudInventario.TabIndex = 39;
+            this.nudInventario.TabIndex = 5;
             // 
             // label7
             // 
@@ -361,11 +382,11 @@
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnLimpiar.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.Location = new System.Drawing.Point(6, 19);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(110, 44);
-            this.btnLimpiar.TabIndex = 26;
+            this.btnLimpiar.TabIndex = 6;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -373,23 +394,23 @@
             // btnOk
             // 
             this.btnOk.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnOk.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.Location = new System.Drawing.Point(119, 19);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(110, 44);
-            this.btnOk.TabIndex = 25;
-            this.btnOk.Text = "Ok";
+            this.btnOk.TabIndex = 7;
+            this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNuevo.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(276, 293);
+            this.btnNuevo.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(287, 290);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(182, 50);
-            this.btnNuevo.TabIndex = 0;
+            this.btnNuevo.Size = new System.Drawing.Size(130, 50);
+            this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -397,11 +418,11 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEliminar.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(464, 293);
+            this.btnEliminar.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(695, 289);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(182, 50);
-            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Size = new System.Drawing.Size(130, 50);
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -409,11 +430,11 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnModificar.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(652, 293);
+            this.btnModificar.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(559, 289);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(182, 50);
-            this.btnModificar.TabIndex = 2;
+            this.btnModificar.Size = new System.Drawing.Size(130, 50);
+            this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -434,14 +455,14 @@
             this.txtIdProducto.Location = new System.Drawing.Point(76, 36);
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.Size = new System.Drawing.Size(159, 20);
-            this.txtIdProducto.TabIndex = 42;
+            this.txtIdProducto.TabIndex = 1;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(56, 65);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(179, 20);
-            this.txtNombre.TabIndex = 43;
+            this.txtNombre.TabIndex = 2;
             // 
             // btnAyuda
             // 
@@ -454,14 +475,188 @@
             this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.UseVisualStyleBackColor = false;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBuscar.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(423, 289);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(130, 50);
+            this.btnBuscar.TabIndex = 28;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // gpbBusqueda
+            // 
+            this.gpbBusqueda.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gpbBusqueda.Controls.Add(this.nudInventarioBusqueda);
+            this.gpbBusqueda.Controls.Add(this.nudPrecioVentaBusqueda);
+            this.gpbBusqueda.Controls.Add(this.nudCostoMayoreoBusqueda);
+            this.gpbBusqueda.Controls.Add(this.cboNombreProductoBusqueda);
+            this.gpbBusqueda.Controls.Add(this.cboCodigoBarrasBusqueda);
+            this.gpbBusqueda.Controls.Add(this.rdbInventario);
+            this.gpbBusqueda.Controls.Add(this.rdbPrecioVenta);
+            this.gpbBusqueda.Controls.Add(this.rdbCostoMayoreo);
+            this.gpbBusqueda.Controls.Add(this.rdbNombreProducto);
+            this.gpbBusqueda.Controls.Add(this.rdbCodigoDeBarras);
+            this.gpbBusqueda.Controls.Add(this.label12);
+            this.gpbBusqueda.Controls.Add(this.label13);
+            this.gpbBusqueda.Enabled = false;
+            this.gpbBusqueda.Location = new System.Drawing.Point(840, 0);
+            this.gpbBusqueda.Name = "gpbBusqueda";
+            this.gpbBusqueda.Size = new System.Drawing.Size(241, 265);
+            this.gpbBusqueda.TabIndex = 29;
+            this.gpbBusqueda.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(51, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(170, 13);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "BUSCANDO UN PRODUCTO";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 13);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Estás: ";
+            // 
+            // rdbCodigoDeBarras
+            // 
+            this.rdbCodigoDeBarras.AutoSize = true;
+            this.rdbCodigoDeBarras.Location = new System.Drawing.Point(6, 32);
+            this.rdbCodigoDeBarras.Name = "rdbCodigoDeBarras";
+            this.rdbCodigoDeBarras.Size = new System.Drawing.Size(108, 17);
+            this.rdbCodigoDeBarras.TabIndex = 29;
+            this.rdbCodigoDeBarras.TabStop = true;
+            this.rdbCodigoDeBarras.Text = "Código de barras:";
+            this.rdbCodigoDeBarras.UseVisualStyleBackColor = true;
+            this.rdbCodigoDeBarras.CheckedChanged += new System.EventHandler(this.rdbCodigoDeBarras_CheckedChanged);
+            // 
+            // rdbNombreProducto
+            // 
+            this.rdbNombreProducto.AutoSize = true;
+            this.rdbNombreProducto.Location = new System.Drawing.Point(6, 81);
+            this.rdbNombreProducto.Name = "rdbNombreProducto";
+            this.rdbNombreProducto.Size = new System.Drawing.Size(62, 17);
+            this.rdbNombreProducto.TabIndex = 30;
+            this.rdbNombreProducto.TabStop = true;
+            this.rdbNombreProducto.Text = "Nombre";
+            this.rdbNombreProducto.UseVisualStyleBackColor = true;
+            this.rdbNombreProducto.CheckedChanged += new System.EventHandler(this.rdbNombreProducto_CheckedChanged);
+            // 
+            // rdbCostoMayoreo
+            // 
+            this.rdbCostoMayoreo.AutoSize = true;
+            this.rdbCostoMayoreo.Location = new System.Drawing.Point(6, 131);
+            this.rdbCostoMayoreo.Name = "rdbCostoMayoreo";
+            this.rdbCostoMayoreo.Size = new System.Drawing.Size(113, 17);
+            this.rdbCostoMayoreo.TabIndex = 31;
+            this.rdbCostoMayoreo.TabStop = true;
+            this.rdbCostoMayoreo.Text = "Costo de mayoreo:";
+            this.rdbCostoMayoreo.UseVisualStyleBackColor = true;
+            this.rdbCostoMayoreo.CheckedChanged += new System.EventHandler(this.rdbCostoMayoreo_CheckedChanged);
+            // 
+            // rdbPrecioVenta
+            // 
+            this.rdbPrecioVenta.AutoSize = true;
+            this.rdbPrecioVenta.Location = new System.Drawing.Point(124, 131);
+            this.rdbPrecioVenta.Name = "rdbPrecioVenta";
+            this.rdbPrecioVenta.Size = new System.Drawing.Size(103, 17);
+            this.rdbPrecioVenta.TabIndex = 32;
+            this.rdbPrecioVenta.TabStop = true;
+            this.rdbPrecioVenta.Text = "Precio de venta:";
+            this.rdbPrecioVenta.UseVisualStyleBackColor = true;
+            this.rdbPrecioVenta.CheckedChanged += new System.EventHandler(this.rdbPrecioVenta_CheckedChanged);
+            // 
+            // rdbInventario
+            // 
+            this.rdbInventario.AutoSize = true;
+            this.rdbInventario.Location = new System.Drawing.Point(6, 181);
+            this.rdbInventario.Name = "rdbInventario";
+            this.rdbInventario.Size = new System.Drawing.Size(90, 17);
+            this.rdbInventario.TabIndex = 33;
+            this.rdbInventario.TabStop = true;
+            this.rdbInventario.Text = "En inventario:";
+            this.rdbInventario.UseVisualStyleBackColor = true;
+            this.rdbInventario.CheckedChanged += new System.EventHandler(this.rdbInventario_CheckedChanged);
+            // 
+            // cboCodigoBarrasBusqueda
+            // 
+            this.cboCodigoBarrasBusqueda.Enabled = false;
+            this.cboCodigoBarrasBusqueda.FormattingEnabled = true;
+            this.cboCodigoBarrasBusqueda.Location = new System.Drawing.Point(7, 55);
+            this.cboCodigoBarrasBusqueda.MaxLength = 13;
+            this.cboCodigoBarrasBusqueda.Name = "cboCodigoBarrasBusqueda";
+            this.cboCodigoBarrasBusqueda.Size = new System.Drawing.Size(228, 21);
+            this.cboCodigoBarrasBusqueda.TabIndex = 34;
+            // 
+            // cboNombreProductoBusqueda
+            // 
+            this.cboNombreProductoBusqueda.Enabled = false;
+            this.cboNombreProductoBusqueda.FormattingEnabled = true;
+            this.cboNombreProductoBusqueda.Location = new System.Drawing.Point(6, 104);
+            this.cboNombreProductoBusqueda.MaxLength = 50;
+            this.cboNombreProductoBusqueda.Name = "cboNombreProductoBusqueda";
+            this.cboNombreProductoBusqueda.Size = new System.Drawing.Size(228, 21);
+            this.cboNombreProductoBusqueda.TabIndex = 35;
+            // 
+            // nudCostoMayoreoBusqueda
+            // 
+            this.nudCostoMayoreoBusqueda.DecimalPlaces = 2;
+            this.nudCostoMayoreoBusqueda.Enabled = false;
+            this.nudCostoMayoreoBusqueda.Location = new System.Drawing.Point(6, 155);
+            this.nudCostoMayoreoBusqueda.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nudCostoMayoreoBusqueda.Name = "nudCostoMayoreoBusqueda";
+            this.nudCostoMayoreoBusqueda.Size = new System.Drawing.Size(113, 20);
+            this.nudCostoMayoreoBusqueda.TabIndex = 36;
+            // 
+            // nudPrecioVentaBusqueda
+            // 
+            this.nudPrecioVentaBusqueda.DecimalPlaces = 2;
+            this.nudPrecioVentaBusqueda.Enabled = false;
+            this.nudPrecioVentaBusqueda.Location = new System.Drawing.Point(125, 154);
+            this.nudPrecioVentaBusqueda.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nudPrecioVentaBusqueda.Name = "nudPrecioVentaBusqueda";
+            this.nudPrecioVentaBusqueda.Size = new System.Drawing.Size(110, 20);
+            this.nudPrecioVentaBusqueda.TabIndex = 36;
+            // 
+            // nudInventarioBusqueda
+            // 
+            this.nudInventarioBusqueda.Enabled = false;
+            this.nudInventarioBusqueda.Location = new System.Drawing.Point(6, 204);
+            this.nudInventarioBusqueda.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nudInventarioBusqueda.Name = "nudInventarioBusqueda";
+            this.nudInventarioBusqueda.Size = new System.Drawing.Size(110, 20);
+            this.nudInventarioBusqueda.TabIndex = 36;
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1079, 345);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.gpbDatos);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
@@ -476,6 +671,8 @@
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.gpbBotones);
+            this.Controls.Add(this.gpbBusqueda);
+            this.Controls.Add(this.gpbDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmProductos";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -495,6 +692,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).EndInit();
             this.gpbBotones.ResumeLayout(false);
+            this.gpbBusqueda.ResumeLayout(false);
+            this.gpbBusqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostoMayoreoBusqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVentaBusqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInventarioBusqueda)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,5 +735,19 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.GroupBox gpbBusqueda;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RadioButton rdbInventario;
+        private System.Windows.Forms.RadioButton rdbPrecioVenta;
+        private System.Windows.Forms.RadioButton rdbCostoMayoreo;
+        private System.Windows.Forms.RadioButton rdbNombreProducto;
+        private System.Windows.Forms.RadioButton rdbCodigoDeBarras;
+        private System.Windows.Forms.ComboBox cboNombreProductoBusqueda;
+        private System.Windows.Forms.ComboBox cboCodigoBarrasBusqueda;
+        private System.Windows.Forms.NumericUpDown nudCostoMayoreoBusqueda;
+        private System.Windows.Forms.NumericUpDown nudInventarioBusqueda;
+        private System.Windows.Forms.NumericUpDown nudPrecioVentaBusqueda;
     }
 }
