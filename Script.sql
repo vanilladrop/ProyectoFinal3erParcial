@@ -104,7 +104,7 @@ SELECT DISTINCT empleado.nombre AS "Nombre del empleado que ha vendido Jabón Zo
 JOIN venta ON venta.idEmpleado = empleado.idEmpleado
 JOIN productosVenta on productosVenta.idVenta = venta.idVenta
 JOIN productos ON productos.idProducto = productosVenta.idProducto
-WHERE productos.nombre LIKE 'Jabón Zote Blanco 400g';
+WHERE productos.nombre LIKE 'Jab_n Zote Blanco 400g';
 
 SELECT DISTINCT productos.nombre "Nombre de los productos mayores a 20 pesos vendidos por Víctor" FROM productos
 JOIN productosVenta ON productosVenta.idProducto = productos.idProducto
