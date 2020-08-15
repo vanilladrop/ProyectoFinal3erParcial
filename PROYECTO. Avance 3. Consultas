@@ -1,10 +1,10 @@
-1.- 
-2.- 
-3.- 
-4.- 
-5.- 
-6.- 
-7.- 
-8.- 
-9.- 
-10.- 
+1.- Buscar el número telefónico de todos los clientes que compraron alcohol
+2.- Buscar los números de venta mayores a $150 hechas por Víctor
+3.- Buscar la cantidad de productos vendidos con el código de barras "7501011105171"
+4.- Buscar el nombre de los empleados que han vendido Jabón Zote Blanco de 400g
+5.- Buscar el nombre de los productos mayores a $20 que han sido vendidos por Víctor
+6.- Buscar el nombre de los clientes cuyas ventas han sido hechas por Gilberto
+7.- Buscar el nombre y costo de mayoreo de todos los productos de la venta 6 con costo de mayoreo menor a $10.00
+8.- Buscar la cantidad total de Sun Chips adquiridas por el cliente con el RFC "CEHM0109S99"
+9.- Buscar el número de venta en las cuales se han vendido Triki-Trakes
+10.- Buscar los números de venta y nombres de empleado que han vendido productos Sonrics, además del nombre de cada producto

@@ -45,6 +45,8 @@ DESCRIBE productos;
 DESCRIBE venta;
 DESCRIBE productosVenta;
 
+-- *.*.* IMPORTANTE CAMBIAR LA RUTA DESDE DONDE SE CARGA CADA DOCUMENTO *.*.* --
+
 LOAD DATA INFILE "F:/Documents/UPP/3er Cuatrimestre/Fundamentos de Bases de Datos/Proyecto/ProyectoFinal3erParcial/productos.csv"
 INTO TABLE productos
 FIELDS TERMINATED BY ','
@@ -100,7 +102,7 @@ SELECT COUNT(productosVenta.idProducto) AS "Cantidad de productos vendidos con e
 JOIN productos ON productos.idProducto = productosVenta.idProducto
 WHERE productosVenta.idProducto = 7501011105171;
 
-SELECT DISTINCT empleado.nombre AS "Nombre del empleado que ha vendido Jabón Zote Blanco de 400g" FROM empleado
+SELECT DISTINCT empleado.nombre AS "Nombre de los empleados que ha vendido Jabón Zote Blanco de 400g" FROM empleado
 JOIN venta ON venta.idEmpleado = empleado.idEmpleado
 JOIN productosVenta on productosVenta.idVenta = venta.idVenta
 JOIN productos ON productos.idProducto = productosVenta.idProducto
