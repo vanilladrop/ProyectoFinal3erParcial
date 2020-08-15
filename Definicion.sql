@@ -85,3 +85,9 @@ SELECT * FROM cliente;
 SELECT * FROM empleado;
 SELECT * FROM venta;
 SELECT * FROM productosVenta;
+
+SELECT DISTINCT cliente.telefono FROM cliente
+JOIN venta ON venta.idCliente = cliente.RFC
+JOIN productosVenta ON productosVenta.idVenta = venta.idVenta
+JOIN productos ON productos.idProducto = productosVenta.idProducto
+WHERE productos.nombre = "%lcohol%";
