@@ -45,3 +45,8 @@ JOIN productosVenta ON productosVenta.idVenta = venta.idVenta
 JOIN productos ON productos.idProducto = productosVenta.idProducto
 WHERE productos.nombre LIKE '%Triki-Trakes%';
 
+SELECT venta.idVenta AS "Números de venta", productos.nombre AS "Productos", empleado.nombre AS "Nombre del empleado" FROM venta
+JOIN productosVenta ON productosVenta.idVenta = venta.idVenta
+JOIN productos ON productos.idProducto = productosVenta.idProducto
+JOIN empleado ON empleado.idEmpleado = venta.idEmpleado
+WHERE productos.nombre LIKE "%Sonric%";
